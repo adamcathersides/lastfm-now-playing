@@ -45,9 +45,9 @@ def run(apikey, secret, log, username):
         logger.error(f'Error connecting to lastfm: {e}')
         sys.exit(1)
 
-    # user = network.get_user(username)
+    user = network.get_user(username)
 
-    # click.echo(user.get_now_playing())
+    click.echo(user.get_now_playing())
 
 if __name__ == '__main__':
     run()
