@@ -10,10 +10,16 @@ import sys
 @click.option('-a', '--apikey', default=None, help='Lastfm API key')
 @click.option('--log', default='INFO', help='Minimum log level to display [debug, info, warning, error, critical]')
 @click.option('--latch/--no-latch', default=False, help='Show most recently played track, even if not currently playing')
+@click.option('--prechars', default=None, help='Characters to be displayed before the output')
+@click.option('--postchars', default=None, help='Characters to be displayed after the output')
 @click.argument('username', default=None)
 
+def build_output(prechars, postchars, track):
 
-def run(apikey, log, username, latch):
+    click.echo(f'{prechars}{track}{postchars}')
+
+
+def run(apikey, log, username, latch, prechars, postchars):
     """ Get the current playing song for user """
 
     logger = logging.getLogger(__name__)
@@ -41,9 +47,9 @@ def run(apikey, log, username, latch):
     most_recent = user.get_recent_tracks()[0].track
 
     if playing:
-        click.echo(playing)
+        build_output(prechars, postchars, playing)
     elif not playing and latch:
-        click.echo(most_recent)
+        build_output(prechars, postchars, most_recent)
 
 if __name__ == '__main__':
     run()
