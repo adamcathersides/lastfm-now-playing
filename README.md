@@ -1,4 +1,4 @@
-# lastfm-now-playing
+# lastfm-now
 
 Show what a user is currently playing.
 
