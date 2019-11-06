@@ -38,5 +38,7 @@ lastfm-now --apikey xxxxxxxxxxxxxxxxxxxxxxxx <username>
   -a, --apikey TEXT     Lastfm API key
   --log TEXT            Minimum log level to display [debug, info, warning, error, critical]
   --latch / --no-latch  Show most recently played track, even if not currently playing
+  --prechars TEXT       Characters to be displayed before the output
+  --postchars TEXT      Characters to be displayed after the output
   --help                Show this message and exit.
 ```
