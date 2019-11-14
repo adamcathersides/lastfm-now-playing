@@ -8,7 +8,7 @@ I created this to be displayed on my i3 status bar. Like this:
 
 # Basic Usage
 
-In order for this to work you will require a lastfm api key and secret.  Grab one [here](https://www.last.fm/api/account/create)
+In order for this to work you will require a lastfm api key.  Grab one [here](https://www.last.fm/api/account/create)
 
 ## Install
 
