@@ -6,6 +6,7 @@ setup(
     author = "Adam Cathersides",
     author_email = "adamcathersides@gmail.com",
     description = ("Display now playing from lastfm"),
+    url='https://github.com/adamcathersides/lastfm-now-playing/',
     packages = ['lastfm_now'],
     include_package_data = True,
     install_requires = [
