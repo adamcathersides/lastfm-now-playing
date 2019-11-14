@@ -10,7 +10,11 @@ I created this to be displayed on my i3 status bar. Like this:
 
 In order for this to work you will require a lastfm api key.  Grab one [here](https://www.last.fm/api/account/create)
 
-## Install
+## Install from pypi
+
+`pip3 install lastfm-now`
+
+## Install from source
 
 ```
 cd lastfm-now-playing
