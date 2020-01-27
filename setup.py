@@ -8,7 +8,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name = "lastfm-now",
-    version = "0.0.2",
+    version = "0.0.3",
     author = "Adam Cathersides",
     author_email = "adamcathersides@gmail.com",
     description = ("Display now playing from lastfm"),
