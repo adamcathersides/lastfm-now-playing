@@ -23,13 +23,16 @@ pip3 install .
 
 ## Run
 
-`lastfm-now` will read the api key from `LASTFM_API_KEY` environment variables. It can also be specified on the command line.
+`lastfm-now` will read the api key from `LASTFM_API_KEY` environment variable. It can also be specified on the command line.
+It can also read the username from `LASTFM_USERNAME` environment variable or can
+be specified on the commandline.
 
 ### Environment variables - example
 
 ```
 export LASTFM_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxx 
-lastfm-now <username> 
+export LASTFM_USERNAME=bob123
+lastfm-now
 
 ```
 
@@ -39,6 +42,7 @@ lastfm-now <username>
 lastfm-now --apikey xxxxxxxxxxxxxxxxxxxxxxxx <username> 
 
 ```
+
 
 ## CLI options
 
@@ -50,6 +54,7 @@ lastfm-now --apikey xxxxxxxxxxxxxxxxxxxxxxxx <username>
   --postchars TEXT      Characters to be displayed after the output
   --help                Show this message and exit.
 ```
+
 
 ## i3 Status Bar
 

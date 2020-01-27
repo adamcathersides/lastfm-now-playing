@@ -12,7 +12,7 @@ import sys
 @click.option('--latch/--no-latch', default=False, help='Show most recently played track, even if not currently playing')
 @click.option('--prechars', default='', help='Characters to be displayed before the output')
 @click.option('--postchars', default='', help='Characters to be displayed after the output')
-@click.argument('username', default=None)
+@click.argument('username', required=False, default=None)
 def run(apikey, log, username, latch, prechars, postchars):
     """ Get the current playing song for user """
 
@@ -30,6 +30,14 @@ def run(apikey, log, username, latch, prechars, postchars):
         except KeyError as e:
             logger.error(f'Error reading environment variable: {e}')
             sys.exit(1)
+
+    if not username:
+        try:
+            username = os.environ['LASTFM_USERNAME']
+        except KeyError as e:
+            logger.error(f'Error reading environment variable: {e}')
+            sys.exit(1)
+
     try:
         network = pylast.LastFMNetwork(API_KEY)
     except WSError as e:
@@ -48,6 +56,7 @@ def run(apikey, log, username, latch, prechars, postchars):
 def build_output(prechars, postchars, track):
 
     click.echo(f'{prechars}{track}{postchars}')
+
 
 if __name__ == '__main__':
     run()
